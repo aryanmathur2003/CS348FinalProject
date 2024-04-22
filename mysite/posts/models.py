@@ -12,15 +12,15 @@ class Post(models.Model):
     liked = models.IntegerField(default=0)
     status = models.IntegerField(default=0)
 
-# class Comments(models.Model):
-#     UserID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment', null = True)
-#     PostID = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comment', null = True)
-#     comment = models.CharField(null = True, max_length=200)
+class Comments(models.Model):
+    UserID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment', null = True)
+    PostID = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comment', null = True)
+    comment = models.CharField(null = True, max_length=200)
 
-# class Report(models.Model):
-#     UserID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='report', null = True)
-#     PostID = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='report', null = True)
-#     reason = models.CharField(max_length=200, null=True)
+class Report(models.Model):
+    UserID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='report', null = True)
+    PostID = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='report', null = True)
+    reason = models.CharField(max_length=200, null=True)
 
 # class Save(models.Model):
 #     UserID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='save', null = True)

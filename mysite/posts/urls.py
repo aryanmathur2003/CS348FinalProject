@@ -13,4 +13,12 @@ urlpatterns = [
     path('post/edit/<int:pk>/', EditPost.as_view(), name='edit_post'),
     path('post/delete/<int:pk>/', DeletePost.as_view(), name='delete_post'),
 
+    # Comment URLs
+
+    path('comment/add/', AddComment.as_view(), name='add_comment'),
+
+    # Reports URLs
+
+    path('report/add/', AddReport.as_view(), name='add_report'),
+
 ] 
